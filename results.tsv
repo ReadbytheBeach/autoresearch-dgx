@@ -1,0 +1,2 @@
+commit	val_bpb	memory_gb	status	description
+initial	1.366	10.07	success	DGX Spark light mode training: 589 steps, loss 3.84, 300.5s, 38.6M tokens, MFU 0.30%
