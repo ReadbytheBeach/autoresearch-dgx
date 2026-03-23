@@ -14,6 +14,12 @@ case "${1:-}" in
     uv run prepare_light.py --num-shards 5
     ;;
   
+  prepare-pip)
+    echo "=== AutoResearch Light: Data Preparation (using pip + mirror) ==="
+    echo "Using Tsinghua mirror for faster download on ARM64..."
+    ./prepare_pip.sh
+    ;;
+  
   train)
     echo "=== AutoResearch Light: Single Training Run ==="
     echo "Config: DEPTH=4, SEQ_LEN=512, BATCH_SIZE=2^16"
@@ -181,7 +187,8 @@ case "${1:-}" in
     echo "Usage: ./run_light.sh [command]"
     echo ""
     echo "Main Commands:"
-    echo "  prepare    - Download data and train tokenizer (light mode)"
+    echo "  prepare    - Download data and train tokenizer (light mode, use uv)"
+    echo "  prepare-pip- Download data using pip + mirror (if uv fails)"
     echo "  train      - Run single training experiment (~5 min)"
     echo "  experiment - Setup git branch for autonomous research"
     echo ""
