@@ -24,7 +24,7 @@
   └── .venv_pip/             # Pip virtual environment (active one)
 
 
-
+  ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 more light then Andrej Kaparthy's original version, due to he is running on H-100
 Parameter          Value               Original
@@ -35,9 +35,7 @@ Parameter          Value               Original
    WINDOW_PATTERN     L (local)           SSSL
    GPU                DGX Spark (ARM64)   H100
 
-
-
-
+  ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
  🚀 How to Restart AutoResearch
 
@@ -62,4 +60,22 @@ Parameter          Value               Original
   cd /home/xj/Desktop/xj_code/autoresearch
   ./run_light.sh experiment  # Creates branch and sets up for AI experimentation
 
+  ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
+🔧 Key Scripts Reference
+
+   Script                      Purpose
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ./run_light.sh prepare      Download data & train tokenizer
+   ./run_light.sh train        Single training run (~5 min)
+   ./run_light.sh experiment   Setup git branch for AI experiments
+   ./run_light.sh status       Show git status & experiment summary
+   ./run_light.sh init         Initialize git for GitHub
+   ./auto_train.sh             Cron automation script
+
+  ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 
+  💾 Disk Usage
+
+  • Total: ~6.3 GB
+  • Virtual environments included in this size
