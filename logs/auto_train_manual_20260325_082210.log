@@ -35,3 +35,12 @@ num_params_M:     5.0
 depth:            4
 ✅ 训练完成
 📤 提交到 Git...
+[master 2c7ca06] Auto train: 20260325_082210 - success	DGX Spark light mode training: 589 steps, loss 3.84, 300.5s, 38.6M tokens, MFU 0.30%
+ 4 files changed, 79 insertions(+)
+ create mode 100644 logs/auto_train_20260325_082210.log
+ create mode 100644 logs/auto_train_manual_20260325_082210.log
+☁️  推送到 GitHub...
+To github.com:ReadbytheBeach/autoresearch-dgx.git
+   fab316c..2c7ca06  master -> master
+✅ 完成: Wed Mar 25 08:28:15 +08 2026
+========================================
