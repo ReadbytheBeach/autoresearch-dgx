@@ -36,3 +36,10 @@ depth:            4
 ✅ 训练完成
 📤 提交到 Git...
 ☁️  推送到 GitHub...
+ssh_dispatch_run_fatal: Connection to 20.205.243.166 port 22: Connection timed out
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+✅ 完成: Mon Mar 30 16:39:59 +08 2026
+========================================
