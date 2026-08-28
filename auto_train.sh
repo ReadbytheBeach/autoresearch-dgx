@@ -35,9 +35,9 @@ python train_light.py 2>&1 | tee -a "$LOG_FILE"
 if [ ${PIPESTATUS[0]} -eq 0 ]; then
     echo "✅ 训练完成" | tee -a "$LOG_FILE"
     
-    # 提交结果到 git
+    # 提交结果到 git（只提交 results.tsv，不提交 logs/ 避免仓库膨胀）
     echo "📤 提交到 Git..." | tee -a "$LOG_FILE"
-    git add -f results.tsv logs/
+    git add -f results.tsv
     git commit -m "Auto train: ${TIMESTAMP} - $(grep 'success' results.tsv | tail -1 | cut -f4-)" 2>/dev/null || true
     
     # 推送到 GitHub
@@ -47,10 +47,7 @@ if [ ${PIPESTATUS[0]} -eq 0 ]; then
     echo "✅ 完成: $(date)" | tee -a "$LOG_FILE"
 else
     echo "❌ 训练失败: $(date)" | tee -a "$LOG_FILE"
-    # 记录失败但继续推送日志
-    git add logs/
-    git commit -m "Auto train failed: ${TIMESTAMP}" 2>/dev/null || true
-    git push origin master 2>/dev/null || true
+    # 失败时不提交任何内容，避免把大量日志推上去
 fi
 
 echo "========================================" | tee -a "$LOG_FILE"
